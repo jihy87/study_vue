@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    hello web
+  </div>
+  <script>
+    var div = document.querySelector('#app');
+    var str = 'hello world';
+    div.innerHTML = str;
+
+    str = 'hello world!!!'; // 기존 웹 개발 방식(html,javascript)에서는 전역변수 내용이 바뀌어도
+    div.innerHTML = str; // 내부에 재 사용 선언 해주지 않는이상 값이 변하지 않음.
+  </script>
+</body>
+</html>

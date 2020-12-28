@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		hello vue
+	</div>
+	<!-- reactivity -->
+	<script>
+		var div = document.querySelector('#app');
+		var viewModel = {};
+
+		// 즉시 실행함수 https://developer.mozilla.org/ko/docs/Glossary/IIFE
+		(function(){
+			// defineProperty 라이브러리로 만들기
+			function init() {
+				// defineProperty: 객체 동작 재정의 api 
+				// defineProperty(대상객체, 객채의 속성, {정의할 내용})
+				Object.defineProperty(viewModel, 'str', {
+					// 속성에 접근 했을 때 viewModel.str
+					get: function() {
+						console.log('접근');
+					},
+					// 속성에 값을 할당 했을 때 viewModel.str = 10
+					set: function(newValue) {
+						console.log('할당', newValue);
+						render(newValue);
+					}
+				});
+			}
+
+			function render(value) {
+				div.innerHTML = value;
+			}
+
+			// 라이브러리 실행
+			init();
+		})();
+	</script>
+</body>
+</body>
+</html>
