@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<p>{{ str }}</p>
+		<p>{{ num }}</p>
+		<p>{{ doubleNum }}</p>
+		<p v-bind:id="uuid" v-bind:class="name"></p>
+		<p v-if="loading">loading (true)</p>
+		<p v-else>not loading (false)</p>
+		<p v-show="loading">display none 처리 dom은 남아있음</p>
+		<input type="text" v-model="message">
+		<p>{{message}} </p>
+	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				str: 'hi',
+				num: 10,
+				uuid: 'abc1234',
+				name: 'txt_blue',
+				loading: true,
+				message: ''
+			},
+			computed: {
+				doubleNum: function() {
+					return this.num * 2 ;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
