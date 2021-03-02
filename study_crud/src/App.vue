@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="wrap">
-      <Login />
       <Header />
       <Container />
     </div>
@@ -11,14 +10,12 @@
 <script>
 import Header from "./components/Header.vue";
 import Container from "./components/Container.vue";
-import Login from "./components/Login.vue";
 
 export default {
   name: "App",
   components: {
     Header,
     Container,
-    Login,
   },
 };
 </script>

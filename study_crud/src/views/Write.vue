@@ -1,6 +1,6 @@
 <template>
   <div class="write">
-    Write
+    <h1>Write</h1>
     <div class="form_txt">
       <textarea name="" id="" cols="30" rows="10"></textarea>
       <button class="btn wide">write</button>
@@ -9,19 +9,18 @@
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
 <style>
 .write {
-  margin-top:1rem;
+  /* margin-top:1rem; */
 }
 .form_txt textarea {
-  width:100%;
-  height:80px;
+  width: 100%;
+  height: 80px;
 }
 .btn.wide {
-  width:100%;
+  width: 100%;
 }
 </style>

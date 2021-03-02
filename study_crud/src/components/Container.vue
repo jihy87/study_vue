@@ -1,25 +1,18 @@
 <template>
   <div class="container">
-    <List/>
-    <Write/>
+    <router-view> </router-view>
   </div>
 </template>
 
 <script>
-import List from './List.vue'
-import Write from './Write.vue'
-
 export default {
-  name: '',
-  components: {
-    List,
-    Write,
-  }
-}
+  name: "",
+};
 </script>
 
 <style>
 .container {
-  padding:1rem;
+  padding: 1rem;
+  min-height: 500px;
 }
 </style>
