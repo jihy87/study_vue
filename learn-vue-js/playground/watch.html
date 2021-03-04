@@ -6,15 +6,30 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">
-    <button>increase</button>
+	<div id="app">
+    <p>{{num}}</p>
+    <button v-on:click="addNum">increase</button>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     new Vue({
       el: '#app',
       data: {
-        num: 10,
+        num: 10
+      },
+      //데이터가 변하면서 실행되는 로직
+      watch: {
+        num: function() {
+          this.logTxt();
+        }
+      },
+      methods: {
+        addNum: function() {
+          this.num = this.num + 1;
+        },
+        logTxt: function() {
+          console.log('changed');
+        }
       }
     })
   </script>

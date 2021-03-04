@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ num }}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        num: 10
+      },
+      computed: {
+        // computed : 빠르게 계산(캐싱이나 내부적 튜닝이 되어있기때문), 데이터의 의존성 (num에 기준을 둔다)
+        // 기준.. 표준..  가벼운 로직
+        doubleNum: function() {
+          return this.num * 2;
+        }
+      },
+      watch: {
+        // watch : 불러오는 num에 따른 추가 데이터를 불러옴. (데이터 요청)
+        // 매번 실행되기 부담스러운 로직
+        num: function(newValue) {
+          this.fetchUserByNumber(newValue);
+        }
+      },
+      methods: {
+        fetchUserByNumber: function(num) {
+          console.log(num);
+        }
+      }
+    })
+  </script>
+</body>
+</html>
