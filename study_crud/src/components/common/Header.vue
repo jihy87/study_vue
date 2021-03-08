@@ -2,8 +2,7 @@
   <div class="header">
     <router-link to="/login">로그인</router-link> |
     <router-link to="/signup">회원가입</router-link> |
-    <router-link to="/list">목록</router-link> |
-    <router-link to="/write">쓰기</router-link>
+    <router-link to="/todo">To do List</router-link>
   </div>
 </template>
 

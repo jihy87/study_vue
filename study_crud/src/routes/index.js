@@ -4,7 +4,6 @@ import VueRouter from 'vue-router';
 // import Login from "./../views/Login.vue";
 // import Signup from "./../views/Signup.vue";
 // import List from "./../views/List.vue";
-// import Write from "./../views/Write.vue";
 
 Vue.use(VueRouter);
 export default new VueRouter({
@@ -29,12 +28,8 @@ export default new VueRouter({
       component: () => import('./../views/Signup.vue')
     },
     {
-      path:'/list',
-      component: () => import('./../views/List.vue')
-    },
-    {
-      path:'/write',
-      component: () => import('./../views/Write.vue')
+      path:'/todo',
+      component: () => import('./../views/Todo.vue')
     },
     {
       // 정의되지 않는 경로 설정
