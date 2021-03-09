@@ -89,6 +89,9 @@ body {
 }
 .list li .item span {
   margin-left: 10px;
+  :before {
+    content: '<i class="far fa-check-square"></i>';
+  }
 }
 .list li .item span.done {
   text-decoration: line-through;

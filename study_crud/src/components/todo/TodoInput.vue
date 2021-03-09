@@ -21,9 +21,9 @@ export default {
       // item 저장. setItem으로 저장한다. storage.setItem(keyName, keyValue); https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
       // localStorage.setItem(this.newTodoItem, this.newTodoItem);
       if(this.newTodoItem !== '') {
-        // 할일 완료 체크를 위한 completed와item 생성.
-        var obj = {completed:false, item:this.newTodoItem};
-        localStorage.setItem(this.newTodoItem, JSON.stringify(obj));
+        // this.$emit()는 이벤트를 상위로 올린다.
+        // this.$emit('이벤트 이름', 인자1, 인자2, ...)
+        this.$emit('addTodoItem', this.newTodoItem)
         this.clearInput();
       }
     },
