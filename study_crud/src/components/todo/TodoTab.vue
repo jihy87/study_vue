@@ -1,8 +1,8 @@
 <template>
   <div class="tab">
     <ul>
-      <li>todo</li>
-      <li>finish</li>
+      <li>Todo</li>
+      <li>Finish</li>
     </ul>
   </div>
 </template>

@@ -1,5 +1,6 @@
-/* layout */
+/* font */
 @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+/* layout */
 * {
   margin: 0;
   padding: 0;
@@ -59,15 +60,48 @@ body {
   box-sizing: border-box;
 }
 
-/* todo */
+/* todo tab */
+.tab ul {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.tab ul li {
+  border: 1px solid #ccc;
+  width: 50%;
+  text-align: center;
+}
+
+/* todo list */
+.list_head {
+  margin-bottom: 10px;
+  text-align: right;
+}
 .list li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
   background-color: #eee;
   margin-bottom: 2px;
   border-radius: 5px;
 }
+.list li .item span {
+  margin-left: 10px;
+}
+.list li .item span.done {
+  text-decoration: line-through;
+}
+
+/* todo input */
+.bar_form.todo input {
+  width: calc(100% - 35px);
+}
+.bar_form.todo input + .btn {
+  margin-left: 5px;
+}
+
 .btn {
   min-width: 30px;
   height: 30px;
@@ -89,14 +123,4 @@ body {
 }
 .btn.wide {
   width: 100%;
-}
-
-.tab ul {
-  display: flex;
-  justify-content: space-between;
-}
-.tab ul li {
-  border: 1px solid #ccc;
-  width: 50%;
-  text-align: center;
 }
