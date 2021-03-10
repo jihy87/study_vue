@@ -15,7 +15,7 @@ export default new VueRouter({
     {
       // 리다이렉트 설정 (기본페이지)
       path:'/',
-      redirect:'/list',
+      redirect:'/todo',
     },
     {
       path:'/login',

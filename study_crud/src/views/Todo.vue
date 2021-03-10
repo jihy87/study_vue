@@ -1,9 +1,10 @@
 <template>
   <div>
     <TodoHeader></TodoHeader>
-    <TodoInput></TodoInput>
+    <TodoInput v-on:addTodoItem="addTodoItemData"></TodoInput>
     <TodoTab></TodoTab>
-    <TodoList></TodoList>
+    <!-- list로 데이터 내리기. -->
+    <TodoList v-bind:propsdata="todoItems"></TodoList>
   </div>
 </template>
 
@@ -22,6 +23,24 @@ export default {
     TodoTab,
     TodoList,
   },
+  data: function() {
+    return {
+      // newTodoItem : "",
+      todoItems: []
+    }
+  },
+  methods: {
+    addTodoItemData: function(todoItem){
+      if(todoItem !== "") {
+        // todoitem을 this로 접근.
+        console.log(todoItem);
+        // 완료목록을 위한 객체 추가.
+        var obj = {completed:false, item:todoItem};
+        localStorage.setItem(todoItem, JSON.stringify(obj));
+        this.todoItems.push(obj);
+      }
+    }
+  }
 };
 
 // ES5 문법으로 컴포넌트 구현

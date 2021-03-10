@@ -14,7 +14,7 @@
             <!-- todoItem completed 속성이 true일 때 class 삽입. -->
           <span v-bind:class="{done: todoItem.completed}">
             {{ todoItem.item }}
-          </span>
+          </span> 
         </div>
         <div class="btns">
           <button class="btn"><i class="fas fa-pen"></i></button>
